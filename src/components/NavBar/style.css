@@ -1,0 +1,55 @@
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    height: 60px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: fixed;
+    z-index: 1100;
+    top: 0px;
+    left: auto;
+    right: 0px;
+    box-shadow: none;
+    padding: 18px 16px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.nav-heading {
+    align-self: center;
+    font-size: 16px;
+}
+
+.nav-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    margin-left: 7px;
+}
+
+.wishlist-icon {
+    color: transparent;
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 18px;
+    margin-top: 1px;
+    
+}

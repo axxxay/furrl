@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import NavBar from './components/NavBar';
+import ProductList from './components/ProductList';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+        setIsLargeScreen(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+        window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        {isLargeScreen ? (
+            <div className="hide-on-large">
+                <h1 className='error'>
+                  Sorry, this page is not available for your screen size. <br />
+                  Please open this page on a mobile or tablet whose screen size is &lt;= 768px.
+                </h1>
+            </div>
+        ) : (
+            <>
+                <NavBar />
+                <ProductList />
+            </>
+        )}
+    </>
   );
 }
 
