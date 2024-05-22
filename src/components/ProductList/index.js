@@ -194,10 +194,15 @@ export default function ProductList() {
         <div className="product-list-container">
             {   
                 Object.keys(vibeDetails).length !== 0 &&
-                <div className="product-banner" style={{backgroundImage: `url(${vibeDetails.imageUrl})`}}>
-                    <div className="product-banner-overlay"></div>
-                    <span className="product-banner-text">{vibeDetails.name}</span>
-                </div>
+                <>
+                    <div className="product-banner" style={{backgroundImage: `url(${vibeDetails.imageUrl})`}}>
+                        <div className="product-banner-overlay"></div>
+                        <span className="product-banner-text">{vibeDetails.name}</span>
+                    </div>
+                    <div className="product-type">
+                        <button type="button" className="product-type-button">Products</button>
+                    </div>
+                </>
             }
             {
                 totalProductCount !== null &&

@@ -10,7 +10,7 @@ const [prevScrollPos, setPrevScrollPos] = useState(0);
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10); // Show if scrolling up or near the top
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
       setPrevScrollPos(currentScrollPos);
     };
 
